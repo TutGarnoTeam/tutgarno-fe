@@ -1,6 +1,6 @@
-import { Route, HashRouter, Routes, Navigate } from "react-router-dom";
+import { Route, HashRouter, Routes, Navigate } from 'react-router-dom';
 
-import { App } from "./App";
+import { App } from './App';
 import {
   HomePage,
   LoginPage,
@@ -10,7 +10,7 @@ import {
   AboutPage,
   SpecialistsPage,
   ItemSpecialistPage,
-} from "./pages";
+} from './pages';
 
 export const Root = () => (
   <HashRouter>
@@ -37,4 +37,4 @@ export const Root = () => (
       </Route>
     </Routes>
   </HashRouter>
-)
+);

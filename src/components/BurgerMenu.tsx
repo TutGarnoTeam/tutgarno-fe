@@ -7,7 +7,5 @@ export const BurgerMenu: React.FC<Props> = ({ setIsMenuOpen }) => {
     setIsMenuOpen(false);
   };
 
-  return (
-    <aside onClick={toggleMenu}>BurgerMenu</aside>
-  )
-}
+  return <aside onClick={toggleMenu}>BurgerMenu</aside>;
+};

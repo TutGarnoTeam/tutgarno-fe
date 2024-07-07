@@ -1,6 +1,11 @@
-import { Route, HashRouter, Routes, Navigate } from "react-router-dom";
+import {
+  Route,
+  HashRouter,
+  Routes,
+  Navigate,
+} from 'react-router-dom';
 
-import { App } from "./App";
+import { App } from './App';
 import {
   HomePage,
   LoginPage,
@@ -10,7 +15,7 @@ import {
   AboutPage,
   SpecialistsPage,
   ItemSpecialistPage,
-} from "./pages";
+} from './pages';
 
 export const Root = () => (
   <HashRouter>
@@ -24,17 +29,14 @@ export const Root = () => (
         </Route>
 
         <Route path="services" element={<ServicesPage />} />
-
         <Route path="about" element={<AboutPage />} />
-
         <Route path="contact" element={<ContactPage />} />
-
         <Route path="login" element={<LoginPage />} />
 
-        <Route path="*" element={<NotFoundPage />} />
-
         <Route path="/home" element={<Navigate to="/" replace />} />
+
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   </HashRouter>
-)
+);

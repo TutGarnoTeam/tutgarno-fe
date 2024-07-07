@@ -10,21 +10,17 @@ export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className='page'>
-      <Header
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-      />
+    <div>
+      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-      {!isMenuOpen
-        && (
-          <>
-            <main className="page__body">
-              <Outlet />
-            </main>
-            <Footer />
-          </>
-        )}
+      {!isMenuOpen && (
+        <>
+          <main>
+            <Outlet />
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

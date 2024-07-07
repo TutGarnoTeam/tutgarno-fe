@@ -5,19 +5,10 @@ type Props = {
   setIsMenuOpen: (isMenuOpen: boolean) => void;
 };
 
-export const Header: React.FC<Props> = ({
-  isMenuOpen,
-  setIsMenuOpen,
-}) => {
-  return (
-    isMenuOpen
-      ? (
-        <BurgerMenu
-          setIsMenuOpen={setIsMenuOpen}
-        />
-      )
-      : (
-        <header>Header</header>
-      )
+export const Header: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
+  return isMenuOpen ? (
+    <BurgerMenu setIsMenuOpen={setIsMenuOpen} />
+  ) : (
+    <header>Header</header>
   );
 };

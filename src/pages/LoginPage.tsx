@@ -1,5 +1,3 @@
 export const LoginPage: React.FC = () => {
-  return (
-    <div>LoginPage</div>
-  )
-}
+  return <div>LoginPage</div>;
+};

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+nav,
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: inherit;
+}
+
+ul,
+p,
+button {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:focus,
+button:focus-within,
+button:active,
+button:target,
+button:visited,
+a:focus,
+a:focus-visible,
+input[type="submit"]:focus,
+button:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}

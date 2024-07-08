@@ -1,10 +1,7 @@
+import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Header } from './components';
-
-import './App.css';
-import { useState } from 'react';
-import { Footer } from './components/Footer';
+import { Header, Footer } from './components';
 
 export const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

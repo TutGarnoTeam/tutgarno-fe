@@ -1,4 +1,5 @@
 import { BurgerMenu } from './BurgerMenu';
+import { ResponsiveAppBar } from './ResponsiveAppBar';
 
 type Props = {
   isMenuOpen: boolean;
@@ -9,6 +10,8 @@ export const Header: React.FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
   return isMenuOpen ? (
     <BurgerMenu setIsMenuOpen={setIsMenuOpen} />
   ) : (
-    <header>Header</header>
+    <header>
+      <ResponsiveAppBar />
+    </header>
   );
 };

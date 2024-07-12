@@ -93,11 +93,7 @@ export const ResponsiveAppBar = () => {
               {pages.map(({ id, title, link }) => (
                 <MenuItem key={id} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <NavLink
-                      to={link}
-                    >
-                      {title}
-                    </NavLink>
+                    <NavLink to={link}>{title}</NavLink>
                   </Typography>
                 </MenuItem>
               ))}
@@ -129,9 +125,7 @@ export const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <NavLink to={link}>
-                  {title}
-                </NavLink>
+                <NavLink to={link}>{title}</NavLink>
               </Button>
             ))}
           </Box>
@@ -158,7 +152,7 @@ export const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {settings.map(setting => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
@@ -169,4 +163,4 @@ export const ResponsiveAppBar = () => {
       </Container>
     </AppBar>
   );
-}
+};

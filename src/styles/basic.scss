@@ -20,6 +20,12 @@ button {
   cursor: pointer;
 }
 
+image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 #root {
   max-width: 1440px;
   width: 100%;

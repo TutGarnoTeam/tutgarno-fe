@@ -53,14 +53,14 @@ const PopularServices: React.FC = () => {
         modules={[Navigation, Pagination]}
         slidesPerView="auto"
         pagination={{
-          el: `.${paginationStyle.pagination_wrapper}`,
+          el: '.services_pagination',
           clickable: true,
           bulletClass: `${paginationStyle.pagination_wrapper_bullet}`,
           bulletActiveClass: `${paginationStyle.pagination_wrapper_bullet_active}`,
         }}
         navigation={{
-          prevEl: `.${paginationStyle.pagination_btn_prev}`,
-          nextEl: `.${paginationStyle.pagination_btn_next}`,
+          prevEl: `.services_prev`,
+          nextEl: `.services_next`,
           disabledClass: `${paginationStyle.pagination_btn_disabled}`,
         }}
       >
@@ -75,7 +75,11 @@ const PopularServices: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <SwiperPagination />
+      <SwiperPagination
+        paginationWrap={'services_pagination'}
+        btnNextCl={'services_next'}
+        btnPrevCl={'services_prev'}
+      />
     </div>
   );
 };

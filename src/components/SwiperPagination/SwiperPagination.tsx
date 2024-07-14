@@ -9,7 +9,11 @@ interface IProps {
   paginationWrap: string;
 }
 
-const SwiperPagination: React.FC<IProps> = ({ paginationWrap, btnNextCl, btnPrevCl}) => {
+const SwiperPagination: React.FC<IProps> = ({
+  paginationWrap,
+  btnNextCl,
+  btnPrevCl,
+}) => {
   return (
     <div className={s.pagination}>
       <button className={`${s.pagination_btn_prev} ${btnPrevCl}`}>

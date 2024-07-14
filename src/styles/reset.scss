@@ -1,4 +1,12 @@
 * {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
@@ -12,15 +20,11 @@ nav,
 h1,
 h2,
 h3,
+h4,
+h5,
 ul,
 p {
   margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: inherit;
 }
 
 ul,
@@ -38,11 +42,6 @@ a {
   color: inherit;
 }
 
-button:focus,
-button:focus-within,
-button:active,
-button:target,
-button:visited,
 a:focus,
 a:focus-visible,
 input[type='submit']:focus,
@@ -53,6 +52,13 @@ button:focus-visible {
 }
 
 button {
+  cursor: pointer;
   border: none;
   background-color: transparent;
+}
+
+image {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

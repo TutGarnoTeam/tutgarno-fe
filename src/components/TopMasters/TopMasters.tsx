@@ -39,7 +39,8 @@ const category: ICategory[] = [
   {
     id: 5,
     categoryName: 'Вії',
-  }, {
+  },
+  {
     id: 6,
     categoryName: 'Брови',
   },
@@ -62,7 +63,8 @@ const TopMasters: React.FC = () => {
         }}
       >
         <button
-          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_left}`}>
+          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_left}`}
+        >
           <svg width={20} height={20}>
             <use href={`${arrow}#icon-arrow-left`}></use>
           </svg>
@@ -73,7 +75,8 @@ const TopMasters: React.FC = () => {
           </SwiperSlide>
         ))}
         <button
-          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_right}`}>
+          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_right}`}
+        >
           <svg width={20} height={20}>
             <use href={`${arrow}#icon-arrow-right`}></use>
           </svg>
@@ -100,28 +103,24 @@ const TopMasters: React.FC = () => {
             <img
               className={s.masters_swiper_img}
               src={defaultAvatar}
-              alt="avatar" />
+              alt="avatar"
+            />
           </div>
           <div className={s.masters_swiper_text_wrap}>
             <h3 className={s.masters_swiper_text_wrap_title}>Ольга Луценко</h3>
             <ul className={s.masters_swiper_text_wrap_btn_list}>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Стрижки
                 </button>
               </li>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Зачіски
                 </button>
               </li>
               <li>
-                <button className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   + ще 12
                 </button>
               </li>
@@ -153,28 +152,24 @@ const TopMasters: React.FC = () => {
             <img
               className={s.masters_swiper_img}
               src={defaultAvatar}
-              alt="avatar" />
+              alt="avatar"
+            />
           </div>
           <div className={s.masters_swiper_text_wrap}>
             <h3 className={s.masters_swiper_text_wrap_title}>Ольга Луценко</h3>
             <ul className={s.masters_swiper_text_wrap_btn_list}>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Стрижки
                 </button>
               </li>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Зачіски
                 </button>
               </li>
               <li>
-                <button className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   + ще 12
                 </button>
               </li>
@@ -206,28 +201,24 @@ const TopMasters: React.FC = () => {
             <img
               className={s.masters_swiper_img}
               src={defaultAvatar}
-              alt="avatar" />
+              alt="avatar"
+            />
           </div>
           <div className={s.masters_swiper_text_wrap}>
             <h3 className={s.masters_swiper_text_wrap_title}>Ольга Луценко</h3>
             <ul className={s.masters_swiper_text_wrap_btn_list}>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Стрижки
                 </button>
               </li>
               <li>
-                <button
-                  className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   Зачіски
                 </button>
               </li>
               <li>
-                <button className={s.masters_swiper_text_wrap_btn_list_btn}
-                >
+                <button className={s.masters_swiper_text_wrap_btn_list_btn}>
                   + ще 12
                 </button>
               </li>

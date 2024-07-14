@@ -1,0 +1,19 @@
+@import "reset";
+@import "variables";
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--primary-bg);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1232px;
+}

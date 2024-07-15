@@ -1,15 +1,15 @@
 import React from 'react';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation, Pagination} from 'swiper/modules';
-import {Rating} from 'react-simple-star-rating'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Rating } from 'react-simple-star-rating';
 import 'swiper/css';
 
-import {SwiperPagination} from '../SwiperPagination/SwiperPagination.tsx';
+import { SwiperPagination } from '../SwiperPagination/SwiperPagination.tsx';
 import paginationStyle from '../SwiperPagination/SwiperPagination.module.scss';
 import s from './TopMasters.module.scss';
 
 import arrow from '../../assets/arrow-top-masters.svg';
-import masterDef from '../../assets/master_def.png'
+import masterDef from '../../assets/master_def.png';
 
 interface ICategory {
   id: number;
@@ -23,9 +23,9 @@ interface IMaster {
   rating: number;
   comments: number;
   address: {
-    city: string,
-    street: string,
-  }
+    city: string;
+    street: string;
+  };
 }
 
 const category: ICategory[] = [
@@ -74,31 +74,31 @@ const mastersArr: IMaster[] = [
       },
       {
         id: 3,
-        categoryName: 'Візаж'
+        categoryName: 'Візаж',
       },
       {
         id: 4,
-        categoryName: 'Макіяж'
+        categoryName: 'Макіяж',
       },
       {
         id: 5,
-        categoryName: 'Манікюр'
+        categoryName: 'Манікюр',
       },
       {
         id: 6,
-        categoryName: 'Педикюр'
+        categoryName: 'Педикюр',
       },
       {
         id: 7,
-        categoryName: 'Масаж'
+        categoryName: 'Масаж',
       },
     ],
     rating: 4.0,
     comments: 10,
     address: {
       city: 'Київ',
-      street: 'пр. Лесі Українки, 7Б'
-    }
+      street: 'пр. Лесі Українки, 7Б',
+    },
   },
   {
     id: 2,
@@ -114,31 +114,31 @@ const mastersArr: IMaster[] = [
       },
       {
         id: 3,
-        categoryName: 'Візаж'
+        categoryName: 'Візаж',
       },
       {
         id: 4,
-        categoryName: 'Макіяж'
+        categoryName: 'Макіяж',
       },
       {
         id: 5,
-        categoryName: 'Манікюр'
+        categoryName: 'Манікюр',
       },
       {
         id: 6,
-        categoryName: 'Педикюр'
+        categoryName: 'Педикюр',
       },
       {
         id: 7,
-        categoryName: 'Масаж'
+        categoryName: 'Масаж',
       },
     ],
     rating: 5,
     comments: 110,
     address: {
       city: 'Запоріжжя',
-      street: 'вул. Короленко, 52'
-    }
+      street: 'вул. Короленко, 52',
+    },
   },
   {
     id: 3,
@@ -154,31 +154,31 @@ const mastersArr: IMaster[] = [
       },
       {
         id: 3,
-        categoryName: 'Візаж'
+        categoryName: 'Візаж',
       },
       {
         id: 4,
-        categoryName: 'Макіяж'
+        categoryName: 'Макіяж',
       },
       {
         id: 5,
-        categoryName: 'Манікюр'
+        categoryName: 'Манікюр',
       },
       {
         id: 6,
-        categoryName: 'Педикюр'
+        categoryName: 'Педикюр',
       },
       {
         id: 7,
-        categoryName: 'Масаж'
+        categoryName: 'Масаж',
       },
     ],
     rating: 5,
     comments: 87,
     address: {
       city: 'Львів',
-      street: 'вул. Червона, 50'
-    }
+      street: 'вул. Червона, 50',
+    },
   },
   {
     id: 4,
@@ -194,33 +194,33 @@ const mastersArr: IMaster[] = [
       },
       {
         id: 3,
-        categoryName: 'Візаж'
+        categoryName: 'Візаж',
       },
       {
         id: 4,
-        categoryName: 'Макіяж'
+        categoryName: 'Макіяж',
       },
       {
         id: 5,
-        categoryName: 'Манікюр'
+        categoryName: 'Манікюр',
       },
       {
         id: 6,
-        categoryName: 'Педикюр'
+        categoryName: 'Педикюр',
       },
       {
         id: 7,
-        categoryName: 'Масаж'
+        categoryName: 'Масаж',
       },
     ],
     rating: 5,
     comments: 87,
     address: {
-      city: 'Кам\'янець-Подільський',
-      street: 'вул. Троїцька, 23'
-    }
+      city: "Кам'янець-Подільський",
+      street: 'вул. Троїцька, 23',
+    },
   },
-]
+];
 
 const TopMasters: React.FC = () => {
   return (
@@ -229,35 +229,34 @@ const TopMasters: React.FC = () => {
         <span className={s.masters_title_wrapper}>Топ</span> майстри
       </h2>
       <p className={s.masters_text}>Улюблені майстри наших користувачів</p>
-      <Swiper
-        className={s.category_swiper}
-        modules={[Navigation]}
-        slidesPerView="auto"
-        navigation={{
-          prevEl: `.${s.category_swiper_slide_btn_left}`,
-          nextEl: `.${s.category_swiper_slide_btn_right}`,
-        }}
-      >
-        <button
-          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_left}`}
-        >
-          <svg width={20} height={20}>
+      <div className={s.category_swiper}>
+        <button className={s.category_swiper_btn_prev}>
+          <svg className={s.category_swiper_icon} width={20} height={20}>
             <use href={`${arrow}#icon-arrow-left`}></use>
           </svg>
         </button>
-        {category.map(el => (
-          <SwiperSlide key={el.id} className={s.category_swiper_slide}>
-            <p>{el.categoryName}</p>
-          </SwiperSlide>
-        ))}
-        <button
-          className={`${s.category_swiper_slide_btn} ${s.category_swiper_slide_btn_right}`}
+        <Swiper
+          className={s.category_swiper_swiper}
+          modules={[Navigation]}
+          slidesPerView="auto"
+          navigation={{
+            prevEl: `.${s.category_swiper_btn_prev}`,
+            nextEl: `.${s.category_swiper_btn_next}`,
+            disabledClass: `${s.category_swiper_disable}`,
+          }}
         >
-          <svg width={20} height={20}>
+          {category.map(el => (
+            <SwiperSlide key={el.id} className={s.category_swiper_slide}>
+              <p>{el.categoryName}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <button className={s.category_swiper_btn_next}>
+          <svg className={s.category_swiper_icon} width={20} height={20}>
             <use href={`${arrow}#icon-arrow-right`}></use>
           </svg>
         </button>
-      </Swiper>
+      </div>
       <Swiper
         className={s.masters_swiper}
         modules={[Navigation, Pagination]}
@@ -274,72 +273,56 @@ const TopMasters: React.FC = () => {
           disabledClass: `${paginationStyle.pagination_btn_disabled}`,
         }}
       >
-        {
-          mastersArr.map(el => (
-            <SwiperSlide key={el.id} className={s.masters_swiper_slide}>
-              <div className={s.img_wrap}>
-                <img
-                  className={s.img_wrap_img}
-                  src={masterDef}
-                  alt="avatar"
-                />
+        {mastersArr.map(el => (
+          <SwiperSlide key={el.id} className={s.masters_swiper_slide}>
+            <div className={s.img_wrap}>
+              <img className={s.img_wrap_img} src={masterDef} alt="avatar" />
+            </div>
+            <div className={s.info_wrap}>
+              <h3 className={s.info_wrap_title}>{el.name}</h3>
+              <ul className={s.info_wrap_category_list}>
+                <li>
+                  <button className={s.info_wrap_category_list_btn}>
+                    {el.services[0].categoryName}
+                  </button>
+                </li>
+                <li>
+                  <button className={s.info_wrap_category_list_btn}>
+                    {el.services[1].categoryName}
+                  </button>
+                </li>
+                <li>
+                  <button className={s.info_wrap_category_list_btn}>
+                    + ще {el.services.length - 2}
+                  </button>
+                </li>
+              </ul>
+              <div className={s.info_wrap_rating}>
+                <Rating initialValue={el.rating} readonly={true} size={11} />
+                <p className={s.info_wrap_rating_num}>{`${el.rating}`}</p>
+                <p className={s.info_wrap_comments}>
+                  {`${el.comments} відгуків`}
+                </p>
               </div>
-              <div className={s.info_wrap}>
-                <h3 className={s.info_wrap_title}>{el.name}</h3>
-                <ul className={s.info_wrap_category_list}>
-                  <li>
-                    <button className={s.info_wrap_category_list_btn}>
-                      {el.services[0].categoryName}
-                    </button>
-                  </li>
-                  <li>
-                    <button className={s.info_wrap_category_list_btn}>
-                      {el.services[1].categoryName}
-                    </button>
-                  </li>
-                  <li>
-                    <button className={s.info_wrap_category_list_btn}>
-                      + ще {el.services.length - 2}
-                    </button>
-                  </li>
-                </ul>
-                <div className={s.info_wrap_rating}>
-                  <Rating
-                    initialValue={el.rating}
-                    readonly={true}
-                    size={11}
-                  />
-                  <p className={s.info_wrap_rating_num}>
-                    {`${el.rating}`}
-                  </p>
-                  <p className={s.info_wrap_comments}>{
-                    `${el.comments} відгуків`}
-                  </p>
-                </div>
-                <p className={s.info_wrap_address}>
-                  {el.address.city}
-                </p>
-                <p className={s.info_wrap_address}>
-                  {el.address.street}
-                </p>
-                <button
-                  className={`
+              <p className={s.info_wrap_address}>{el.address.city}</p>
+              <p className={s.info_wrap_address}>{el.address.street}</p>
+              <button
+                className={`
               ${s.info_wrap_btn}
               ${s.info_wrap_btn_about}`}
-                >
-                  Про майстра
-                </button>
-                <button
-                  className={`
+              >
+                Про майстра
+              </button>
+              <button
+                className={`
               ${s.info_wrap_btn}
               ${s.info_wrap_btn_record}`}
-                >
-                  Запис
-                </button>
-              </div>
-            </SwiperSlide>
-          ))
-        }
+              >
+                Запис
+              </button>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
       <SwiperPagination
         paginationWrap={'masters_pagination'}

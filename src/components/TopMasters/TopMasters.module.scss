@@ -4,8 +4,10 @@
   background-color: #def7ec;
 
   &_title {
+    padding: 0 20px;
     margin-bottom: 8px;
 
+    font-family: var(--third-family);
     font-weight: 700;
     font-size: 28px;
     line-height: 110%;
@@ -18,8 +20,10 @@
   }
 
   &_text {
+    padding: 0 20px;
     margin-bottom: 16px;
 
+    font-family: var(--third-family);
     font-weight: 500;
     font-size: 18px;
     line-height: 120%;
@@ -30,42 +34,49 @@
 }
 
 .category_swiper {
-  padding-left: 20px;
   margin-bottom: 32px;
+
+  &_swiper {
+    padding: 0 20px;
+  }
 
   &_slide {
     width: auto;
     border: 2px solid #17846a;
     border-radius: 24px;
-    padding: 10px 20px;
+    padding: 12px;
     margin-right: 8px;
-
-    &_btn {
-      display: none;
-
-      &_right,
-      &_left {
-        padding: 10px 20px;
-      }
-
-    }
   }
 
   &_slide:last-child {
-    margin-right: 20px;
+    margin-right: 0;
   }
 
   &_slide:hover {
     color: #eefbf6;
     background-color: #17846a;
   }
+
+  &_btn_prev,
+  &_btn_next {
+    display: none;
+    color: #072721;
+  }
+
+  &_disable {
+    color: #126a57;
+  }
+
+  &_icon {
+    stroke: currentColor;
+    fill: currentColor;
+  }
 }
 
 .masters_swiper {
   position: relative;
 
-  height: 366px;
-  padding-left: 20px;
+  padding: 0 20px;
   margin-bottom: 16px;
 
   &_slide {
@@ -73,7 +84,7 @@
     flex-direction: column;
     align-items: center;
     width: 240px;
-    height: auto;
+    height: 371px;
     margin-right: 16px;
 
     .img_wrap {
@@ -84,7 +95,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 18px;
+      padding: 12px;
       border-radius: 50%;
 
       background-color: #def7ec;
@@ -100,7 +111,6 @@
       border-radius: 24px;
       padding: 28px 12px 16px 12px;
       width: 240px;
-      height: 198px;
       margin-top: auto;
 
       box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.05),
@@ -110,6 +120,7 @@
       &_title {
         margin-bottom: 4px;
 
+        font-family: var(--third-family);
         font-weight: 500;
         font-size: 18px;
         line-height: 120%;
@@ -119,7 +130,7 @@
 
       &_category_list {
         display: flex;
-        gap: 5px;
+        gap: 8px;
         margin-bottom: 4px;
 
         &_btn {
@@ -141,6 +152,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        margin-bottom: 4px;
 
         &_num {
           display: flex;
@@ -160,7 +172,7 @@
       }
 
       &_comments {
-        margin-left: 40px;
+        margin-left: auto;
 
         font-weight: 600;
         font-size: 12px;
@@ -170,13 +182,15 @@
       }
 
       &_address {
-        margin-bottom: 8px;
-
         font-weight: 400;
         font-size: 14px;
         line-height: 140%;
         letter-spacing: -0.01em;
         color: #072721;
+      }
+
+      &_address:nth-child(odd) {
+        margin-bottom: 8px;
       }
 
       &_btn {
@@ -201,5 +215,139 @@
         }
       }
     }
+  }
+
+  &_slide:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .masters {
+    &_title {
+      margin-bottom: 16px;
+
+      font-size: 48px;
+      line-height: 150%;
+    }
+
+    &_text {
+      margin-bottom: 24px;
+
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+
+  .category_swiper {
+    display: flex;
+    gap: 8px;
+    padding: 0 34px;
+    margin-bottom: 21px;
+
+    &_swiper {
+      padding: 0;
+    }
+
+    &_slide {
+      padding: 15px 20px;
+    }
+
+    &_btn_prev,
+    &_btn_next {
+      display: block;
+      padding: 15px 20px;
+    }
+  }
+
+  .masters_swiper {
+    padding: 0 53px;
+    margin-bottom: 16px;
+
+
+    &_slide {
+      width: 296px;
+      height: 485px;
+
+      .img_wrap {
+        &_img {
+          width: 216px;
+          height: 216px;
+        }
+      }
+
+      .info_wrap {
+        padding: 32px 20px 24px 20px;
+        width: 296px;
+        height: 256px;
+
+        &_title {
+          margin-bottom: 8px;
+
+          font-size: 20px;
+          line-height: 130%;
+        }
+
+        &_category_list {
+          margin-bottom: 8px;
+
+          &_btn {
+            padding: 2px 12px;
+
+            font-size: 14px;
+            line-height: 150%;
+          }
+        }
+
+        &_num {
+          font-size: 12px;
+        }
+
+        &_address {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+        }
+
+        &_btn {
+          border-radius: 24px;
+          padding: 10px;
+          width: 124px;
+          height: 41px;
+
+          font-size: 14px;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .masters {
+    padding: 48px 104px;
+  }
+
+  .category_swiper {
+    padding: 0 138px;
+    margin-bottom: 32px;
+
+    &_swiper {
+      padding: 0;
+    }
+
+    &_slide {
+      padding: 10px 20px;
+    }
+
+    &_btn_prev,
+    &_btn_next {
+      padding: 10px 20px;
+    }
+  }
+
+  .masters_swiper {
+    padding: 0;
+    margin-bottom: 27px;
   }
 }

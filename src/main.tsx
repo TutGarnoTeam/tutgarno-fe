@@ -1,16 +1,16 @@
 import ReactDOM from 'react-dom/client';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import {Root} from './Root.tsx';
-import {persistor, store} from './store/store.ts';
+import { Root } from './Root.tsx';
+import { persistor, store } from './store/store.ts';
 
-import './styles/global.scss'
+import './styles/global.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <Root/>
+      <Root />
     </PersistGate>
   </Provider>,
 );

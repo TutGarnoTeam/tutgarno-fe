@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 
 import { Icon } from '../UI';
 import s from './Header.module.scss';
+import { Navigation } from 'swiper/modules';
 
 interface ICategory {
   id: number;
@@ -21,34 +21,7 @@ const category: ICategory[] = [
   { id: 6, name: 'Послуги від учнів*' },
 ];
 
-const MainHeader: React.FC = () => {
-  return (
-    <header className={s.header}>
-      <div className={s.header_wrap}>
-        <Link to={'/'} className={s.logo}>
-          <Icon id={'icon-Logo'} style={s.logo_icon} />
-        </Link>
-        <button className={s.auth_btn}>
-          Вхід
-          <Icon id={'icon-user'} style={s.auth_btn_icon} />
-        </button>
-      </div>
-      <Swiper
-        modules={[Navigation]}
-        className={s.category_swiper}
-        slidesPerView="auto"
-      >
-        {category.map(el => (
-          <SwiperSlide key={el.id} className={s.category_swiper_slide}>
-            <p>{el.name}</p>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </header>
-  );
-};
-
-const FixedHeader = () => {
+const FixedMenu = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleClickMenu = () => {
@@ -88,30 +61,85 @@ const FixedHeader = () => {
 };
 
 const Header: React.FC = () => {
-  const [showFixedHeader, setShowFixedHeader] = useState(false);
+  const [showFixedMenu, setShowFixedMenu] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const navigate = useNavigate();
+
+  const handleClickLogin = () => {
+    navigate('/login');
+  };
+
+  const handleCheckWidth = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
       if (scrollY > 120) {
-        setShowFixedHeader(true);
+        setShowFixedMenu(true);
       } else {
-        setShowFixedHeader(false);
+        setShowFixedMenu(false);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleCheckWidth);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleCheckWidth);
     };
-  }, [window.scrollY]);
+  }, [window.scrollY, isMobile]);
 
   return (
     <>
-      <MainHeader />
-      {showFixedHeader && <FixedHeader />}
+      <header className={s.header}>
+        <div className={s.header_wrap}>
+          <Link to={'/'} className={s.header_logo}>
+            <Icon id={'icon-Logo'} style={s.header_logo_icon} />
+          </Link>
+          {isMobile ? (
+            <button
+              className={s.header_auth_btn}
+              onClick={handleClickLogin}>
+              Вхід
+              <Icon id={'icon-user'} style={s.header_auth_btn_icon} />
+            </button>
+          ) : (
+            <ul className={s.header_nav_list}>
+              <li>
+                <button className={s.header_nav_list_btn}>
+                  <Icon id={'icon-Master2'} style={s.header_nav_list_icon} />
+                </button>
+              </li>
+              <li>
+                <button className={s.header_nav_list_btn}>
+                  <Icon id={'icon-user'} style={s.header_nav_list_icon} />
+                </button>
+              </li>
+              <li>
+                <button className={s.header_nav_list_btn}>
+                  <Icon id={'icon-menu'} style={s.header_nav_list_icon} />
+                </button>
+              </li>
+            </ul>
+          )}
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          className={s.category_swiper}
+          slidesPerView="auto"
+        >
+          {category.map(el => (
+            <SwiperSlide key={el.id} className={s.category_swiper_slide}>
+              <p>{el.name}</p>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </header>
+      {showFixedMenu && isMobile && <FixedMenu />}
     </>
   );
 };

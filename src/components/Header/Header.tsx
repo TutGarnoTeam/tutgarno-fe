@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
 import 'swiper/css';
 
-import s from './Header.module.scss';
-import {Link} from 'react-router-dom';
 import {Icon} from "../UI";
+import s from './Header.module.scss';
 
 interface ICategory {
   id: number;
@@ -55,10 +55,10 @@ const FixedHeader = () => {
     setIsOpenModal(prev => !prev)
   }
 
-
   return <div className={s.fixed_header}>
     <div className={s.fixed_header_wrap}>
-        <ul className={`${s.fixed_header_list} ${isOpenModal && s.fixed_header_list_open}`}>
+      <ul
+        className={`${s.fixed_header_list} ${isOpenModal && s.fixed_header_list_open}`}>
         <li><Link to={'/'}>Послуги</Link></li>
         <li><Link to={'/'}>Майстри</Link></li>
         <li><Link to={'/'}>Про нас</Link></li>

@@ -14,6 +14,8 @@
     padding: 8px;
     border-radius: 9999px;
     border: 1px solid #4b635f;
+
+    color: #4b635f;
   }
 
   &_btn_disabled {
@@ -40,8 +42,8 @@
   }
 
   &_icon {
-    stroke: currentColor;
-    fill: currentColor;
+    width: 12px;
+    height: 12px;
   }
 }
 

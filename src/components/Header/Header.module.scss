@@ -1,5 +1,5 @@
 .header {
-  height: 136px;
+  padding-bottom: 28px;
 
   background-color: #126a57;
 
@@ -7,37 +7,37 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px 28px 20px;
+    padding: 18px 20px;
   }
-}
 
-.logo {
-  color: #eefbf6;
+  &_logo {
+    color: #eefbf6;
 
-  &_icon {
-    width: 100px;
-    height: 16px;
+    &_icon {
+      width: 100px;
+      height: 16px;
+    }
   }
-}
 
-.auth_btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  border-radius: 16px;
-  padding: 8px 6px;
-  width: 108px;
+  &_auth_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 16px;
+    padding: 8px 6px;
+    width: 108px;
 
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 120%;
-  color: #112824;
-  background-color: #def7ec;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 120%;
+    color: #112824;
+    background-color: #def7ec;
 
-  &_icon {
-    width: 12px;
-    height: 12px;
+    &_icon {
+      width: 12px;
+      height: 12px;
+    }
   }
 }
 
@@ -82,9 +82,8 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition:
-      max-height 0.3s ease,
-      opacity 0.3s ease;
+    transition: max-height 0.3s ease,
+    opacity 0.3s ease;
 
     &_open {
       max-height: 200px;
@@ -122,3 +121,88 @@
   &_menu {
   }
 }
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 52px 24px;
+
+    background: linear-gradient(134deg, #0f453b 0%, #028971 52%, #9fc768 100%);
+
+    &_wrap {
+      padding: 16px 0;
+    }
+
+    &_logo {
+      &_icon {
+        width: 165px;
+        height: 24px;
+      }
+    }
+
+    &_nav_list {
+      display: flex;
+      gap: 16px;
+
+      &_btn {
+        color: #eefbf6;
+      }
+
+      &_icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .category_swiper {
+    width: 652px;
+    padding: 4px;
+    margin: 0;
+    border: 2px solid #b0ead3;
+    border-radius: 24px;
+
+    &_slide {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      color: #e5ebea;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    padding: 24px 104px;
+
+    &_nav_list {
+      display: flex;
+      gap: 16px;
+
+      &_btn {
+        color: #eefbf6;
+      }
+
+      &_icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .category_swiper {
+    width: 652px;
+    padding: 4px;
+    margin: 0;
+    border: 2px solid #b0ead3;
+    border-radius: 24px;
+
+    &_slide {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      color: #e5ebea;
+    }
+  }
+}
+
+

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import sprite from '../../../assets/svg/sprite.svg'
+import sprite from '../../../assets/svg/sprite.svg';
 
 interface IProps {
   id: string;
   style?: string;
 }
 
-const Icon: React.FC<IProps> = ({id, style}) => {
+const Icon: React.FC<IProps> = ({ id, style }) => {
   return (
     <svg className={style}>
       <use href={`${sprite}#${id}`}></use>
@@ -15,4 +15,4 @@ const Icon: React.FC<IProps> = ({id, style}) => {
   );
 };
 
-export {Icon};
+export { Icon };

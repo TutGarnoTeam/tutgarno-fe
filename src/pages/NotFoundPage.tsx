@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import {NotFound} from "../components";
+import { NotFound } from '../components';
 
 const NotFoundPage: React.FC = () => {
   return (
     <div>
-     <NotFound />
+      <NotFound />
     </div>
   );
 };
 
-export {NotFoundPage}
+export { NotFoundPage };

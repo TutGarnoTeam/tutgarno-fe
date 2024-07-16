@@ -1,44 +1,43 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
-import {Layout} from "../layout/Layout.tsx";
+import { Layout } from '../layout/Layout.tsx';
 import {
   AboutPage,
   ContactPage,
   HomePage,
   NotFoundPage,
   ServicesPage,
-  SpecialistsPage
-} from "../pages";
+  SpecialistsPage,
+} from '../pages';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    errorElement: <NotFoundPage/>,
-    element: <Layout/>,
+    errorElement: <NotFoundPage />,
+    element: <Layout />,
     children: [
       {
         index: true,
-        element: <HomePage/>
+        element: <HomePage />,
       },
       {
         path: '/about',
-        element: <AboutPage/>
+        element: <AboutPage />,
       },
       {
         path: '/services',
-        element: <ServicesPage/>
+        element: <ServicesPage />,
       },
       {
         path: '/specialists',
-        element: <SpecialistsPage/>
+        element: <SpecialistsPage />,
       },
       {
         path: '/contacts',
-        element: <ContactPage/>
-      }
-    ]
-  }
-])
+        element: <ContactPage />,
+      },
+    ],
+  },
+], {basename: '/tutgarno-fe'});
 
-
-export {router}
+export { router };

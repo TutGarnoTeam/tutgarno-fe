@@ -6,10 +6,10 @@ import TopMasters from '../components/TopMasters/TopMasters.tsx';
 const HomePage: React.FC = () => {
   return (
     <>
-      <PopularServices/>
-      <TopMasters/>
+      <PopularServices />
+      <TopMasters />
     </>
   );
 };
 
-export {HomePage}
+export { HomePage };

@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
-import { SwiperPagination } from '../SwiperPagination/SwiperPagination.tsx';
-import paginationStyle from '../SwiperPagination/SwiperPagination.module.scss';
+import { SwiperPagination } from '../UI/SwiperPagination/SwiperPagination.tsx';
+import paginationStyle from '../UI/SwiperPagination/SwiperPagination.module.scss';
 import s from './PopularServices.module.scss';
 
 import defaultImgUrl from '../../assets/symbol-defs.svg';

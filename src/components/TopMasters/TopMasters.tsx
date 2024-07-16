@@ -4,8 +4,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { Rating } from 'react-simple-star-rating';
 import 'swiper/css';
 
-import { SwiperPagination } from '../SwiperPagination/SwiperPagination.tsx';
-import paginationStyle from '../SwiperPagination/SwiperPagination.module.scss';
+import { SwiperPagination } from '../UI/SwiperPagination/SwiperPagination.tsx';
+import paginationStyle from '../UI/SwiperPagination/SwiperPagination.module.scss';
 import s from './TopMasters.module.scss';
 
 import arrow from '../../assets/arrow-top-masters.svg';

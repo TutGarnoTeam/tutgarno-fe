@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Navigation} from 'swiper/modules';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 
-import {Icon} from "../UI";
+import { Icon } from '../UI';
 import s from './Header.module.scss';
 
 interface ICategory {
@@ -13,12 +13,12 @@ interface ICategory {
 }
 
 const category: ICategory[] = [
-  {id: 1, name: 'Волосся'},
-  {id: 2, name: 'Нігті'},
-  {id: 3, name: 'Обличчя'},
-  {id: 4, name: 'Тіло'},
-  {id: 5, name: 'Барбер послуги'},
-  {id: 6, name: 'Послуги від учнів*'},
+  { id: 1, name: 'Волосся' },
+  { id: 2, name: 'Нігті' },
+  { id: 3, name: 'Обличчя' },
+  { id: 4, name: 'Тіло' },
+  { id: 5, name: 'Барбер послуги' },
+  { id: 6, name: 'Послуги від учнів*' },
 ];
 
 const MainHeader: React.FC = () => {
@@ -26,11 +26,11 @@ const MainHeader: React.FC = () => {
     <header className={s.header}>
       <div className={s.header_wrap}>
         <Link to={'/'} className={s.logo}>
-          <Icon id={'icon-Logo'} style={s.logo_icon}/>
+          <Icon id={'icon-Logo'} style={s.logo_icon} />
         </Link>
         <button className={s.auth_btn}>
           Вхід
-          <Icon id={'icon-user'} style={s.auth_btn_icon}/>
+          <Icon id={'icon-user'} style={s.auth_btn_icon} />
         </button>
       </div>
       <Swiper
@@ -49,29 +49,42 @@ const MainHeader: React.FC = () => {
 };
 
 const FixedHeader = () => {
-  const [isOpenModal, setIsOpenModal] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   const handleClickMenu = () => {
-    setIsOpenModal(prev => !prev)
-  }
+    setIsOpenModal(prev => !prev);
+  };
 
-  return <div className={s.fixed_header}>
-    <div className={s.fixed_header_wrap}>
-      <ul
-        className={`${s.fixed_header_list} ${isOpenModal && s.fixed_header_list_open}`}>
-        <li><Link to={'/'}>Послуги</Link></li>
-        <li><Link to={'/'}>Майстри</Link></li>
-        <li><Link to={'/'}>Про нас</Link></li>
-        <li><Link to={'/'}>Контакти</Link></li>
-      </ul>
-      <button onClick={handleClickMenu} className={s.fixed_header_btn}>
-        <p>Головна</p>
-        <Icon id={isOpenModal ? 'icon-close' : 'icon-menu'}
-              style={s.fixed_header_icon}/>
-      </button>
+  return (
+    <div className={s.fixed_header}>
+      <div className={s.fixed_header_wrap}>
+        <ul
+          className={`${s.fixed_header_list} ${isOpenModal && s.fixed_header_list_open}`}
+        >
+          <li>
+            <Link to={'/services'}>Послуги</Link>
+          </li>
+          <li>
+            <Link to={'/specialists'}>Майстри</Link>
+          </li>
+          <li>
+            <Link to={'/about'}>Про нас</Link>
+          </li>
+          <li>
+            <Link to={'/contacts'}>Контакти</Link>
+          </li>
+        </ul>
+        <button onClick={handleClickMenu} className={s.fixed_header_btn}>
+          <p>Головна</p>
+          <Icon
+            id={isOpenModal ? 'icon-close' : 'icon-menu'}
+            style={s.fixed_header_icon}
+          />
+        </button>
+      </div>
+      <div className={s.fixed_header_menu}></div>
     </div>
-    <div className={s.fixed_header_menu}></div>
-  </div>;
+  );
 };
 
 const Header: React.FC = () => {
@@ -97,10 +110,10 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <MainHeader/>
-      {showFixedHeader && <FixedHeader/>}
+      <MainHeader />
+      {showFixedHeader && <FixedHeader />}
     </>
   );
 };
 
-export default Header;
+export {Header};

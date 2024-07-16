@@ -1,6 +1,5 @@
 export * from './UI';
 
-export { Header } from './Header';
-export { Footer } from './Footer';
-export { BurgerMenu } from './BurgerMenu';
-export { ResponsiveAppBar } from './ResponsiveAppBar';
+export {Header} from './Header/Header.tsx';
+export {Footer} from './Footer/Footer.tsx';
+export {NotFound} from './NotFound/NotFound.tsx'

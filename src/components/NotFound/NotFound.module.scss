@@ -1,0 +1,26 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 48px;
+
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.title {
+  color: #17846a;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 24px;
+
+  color: #f9fbfb;
+  background: #17846a;
+}

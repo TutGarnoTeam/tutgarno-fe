@@ -29,19 +29,30 @@
   width: 50px;
   aspect-ratio: 1;
   display: grid;
-  background: radial-gradient(farthest-side, currentColor calc(100% - 6px), #0000 calc(100% - 5px) 0);
-  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 13px), #000 calc(100% - 12px));
+  background: radial-gradient(
+    farthest-side,
+    currentColor calc(100% - 6px),
+    #0000 calc(100% - 5px) 0
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(100% - 13px),
+    #000 calc(100% - 12px)
+  );
   border-radius: 50%;
   animation: l19 2s infinite linear;
 }
 
 .loader::before,
 .loader::after {
-  content: "";
+  content: '';
   grid-area: 1/1;
-  background: linear-gradient(currentColor 0 0) center,
-  linear-gradient(currentColor 0 0) center;
-  background-size: 100% 10px, 10px 100%;
+  background:
+    linear-gradient(currentColor 0 0) center,
+    linear-gradient(currentColor 0 0) center;
+  background-size:
+    100% 10px,
+    10px 100%;
   background-repeat: no-repeat;
 }
 
@@ -51,6 +62,6 @@
 
 @keyframes l19 {
   100% {
-    transform: rotate(1turn)
+    transform: rotate(1turn);
   }
 }

@@ -116,4 +116,4 @@ const Header: React.FC = () => {
   );
 };
 
-export {Header};
+export { Header };

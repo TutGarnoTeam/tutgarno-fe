@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import {Process} from "../components/Process/Process.tsx";
+import { Process } from '../components/Process/Process.tsx';
 
 const AboutPage: React.FC = () => {
   return (
     <div>
-      <Process/>
+      <Process />
     </div>
   );
 };
 
-export {AboutPage}
+export { AboutPage };

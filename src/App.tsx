@@ -1,23 +1,19 @@
-import { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Header, Footer } from './components';
+import { Footer } from './components';
+import Header from './components/Header/Header.tsx';
 
-export const App: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+const App: React.FC = () => {
   return (
     <div>
-      <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-
-      {!isMenuOpen && (
-        <>
-          <main>
-            <Outlet />
-          </main>
-          <Footer />
-        </>
-      )}
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };
+
+export default App;

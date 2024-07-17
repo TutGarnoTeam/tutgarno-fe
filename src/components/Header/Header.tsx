@@ -31,6 +31,11 @@ const FixedMenu = () => {
     setIsOpenModal(prev => !prev);
   };
 
+  const handleClickLink = () => {
+    setIsOpenModal(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={s.fixed_header}>
       <div className={s.fixed_header_wrap}>
@@ -38,16 +43,24 @@ const FixedMenu = () => {
           className={`${s.fixed_header_list} ${isOpenModal && s.fixed_header_list_open}`}
         >
           <li>
-            <Link to={'/services'}>Послуги</Link>
+            <Link to={'/services'} onClick={handleClickLink}>
+              Послуги
+            </Link>
           </li>
           <li>
-            <Link to={'/specialists'}>Майстри</Link>
+            <Link to={'/specialists'} onClick={handleClickLink}>
+              Майстри
+            </Link>
           </li>
           <li>
-            <Link to={'/about'}>Про нас</Link>
+            <Link to={'/about'} onClick={handleClickLink}>
+              Про нас
+            </Link>
           </li>
           <li>
-            <Link to={'/contacts'}>Контакти</Link>
+            <Link to={'/contacts'} onClick={handleClickLink}>
+              Контакти
+            </Link>
           </li>
         </ul>
         <button onClick={handleClickMenu} className={s.fixed_header_btn}>

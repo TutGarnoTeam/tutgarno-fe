@@ -6,7 +6,7 @@ import {
   ContactPage,
   HomePage,
   LoginPage,
-  NotFoundPage,
+  NotFoundPage, ProcessPage,
   ServicesPage,
   SpecialistsPage,
 } from '../pages';
@@ -41,6 +41,10 @@ const router = createBrowserRouter(
         {
           path: '/login',
           element: <LoginPage />,
+        },
+        {
+          path: '/process',
+          element: <ProcessPage />,
         },
       ],
     },

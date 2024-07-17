@@ -78,20 +78,26 @@ const NavMobile: React.FC = () => {
 };
 
 const NavTablet: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/process');
+  };
+
   return (
     <ul className={s.header_list_btn}>
       <li>
-        <button className={s.header_nav_btn}>
+        <button onClick={handleClick} className={s.header_nav_btn}>
           <Icon id={'icon-Master2'} style={s.header_nav_btn_icon} />
         </button>
       </li>
       <li>
-        <button className={s.header_nav_btn}>
+        <button onClick={handleClick} className={s.header_nav_btn}>
           <Icon id={'icon-user'} style={s.header_nav_btn_icon} />
         </button>
       </li>
       <li>
-        <button className={s.header_nav_btn}>
+        <button onClick={handleClick} className={s.header_nav_btn}>
           <Icon id={'icon-menu'} style={s.header_nav_btn_icon} />
         </button>
       </li>
@@ -100,6 +106,12 @@ const NavTablet: React.FC = () => {
 };
 
 const NavLaptop: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/process');
+  };
+
   return (
     <>
       <ul className={s.header_list_link}>
@@ -118,12 +130,12 @@ const NavLaptop: React.FC = () => {
       </ul>
       <ul className={s.header_list_btn}>
         <li>
-          <button className={s.header_nav_btn}>
+          <button onClick={handleClick} className={s.header_nav_btn}>
             Стати майстром
           </button>
         </li>
         <li>
-          <button className={s.header_nav_btn}>
+          <button onClick={handleClick} className={s.header_nav_btn}>
             Профіль
             <Icon id={'icon-user'} style={s.header_nav_btn_icon} />
           </button>
@@ -137,10 +149,6 @@ const Header: React.FC = () => {
   const [showFixedMenu, setShowFixedMenu] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
-  const handleCheckWidth = () => {
-    setWidth(window.innerWidth);
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -150,6 +158,10 @@ const Header: React.FC = () => {
       } else {
         setShowFixedMenu(false);
       }
+    };
+
+    const handleCheckWidth = () => {
+      setWidth(window.innerWidth);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -181,7 +193,9 @@ const Header: React.FC = () => {
         >
           {category.map(el => (
             <SwiperSlide key={el.id} className={s.category_swiper_slide}>
-              <p>{el.name}</p>
+              <Link to={'/services'} className={s.category_swiper_slide_link}>
+                {el.name}
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

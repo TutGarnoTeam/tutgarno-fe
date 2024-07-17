@@ -6,3 +6,4 @@ export { LoginPage } from './LoginPage';
 export { ServicesPage } from './ServicesPage';
 export { SpecialistsPage } from './SpecialistsPage';
 export { NotFoundPage } from './NotFoundPage';
+export { ProcessPage } from './ProcessPage.tsx';

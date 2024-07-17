@@ -31,10 +31,12 @@ const FooterForm: React.FC = () => {
       </h3>
       <label className={s.footer_form_label}>
         <Icon id={'icon-email'} style={s.footer_form_icon} />
-        <input type="email"
-               value={email}
-               onChange={handleChange}
-               placeholder={'Впиши свій email'} />
+        <input
+          type="email"
+          value={email}
+          onChange={handleChange}
+          placeholder={'Впиши свій email'}
+        />
       </label>
       <p className={s.footer_form_text}>
         Отримуй всі круті пропозиції про знижки, послуги та новини світу краси!
@@ -57,32 +59,47 @@ const Footer: React.FC = () => {
             <h3 className={s.container_title}>Компанія</h3>
             <ul>
               <li>
-                <Link className={s.container_link} to={'/'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/'}
+                  onClick={handleClick}
+                >
                   Головна
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/about'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/about'}
+                  onClick={handleClick}
+                >
                   Про нас
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/specialists'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/specialists'}
+                  onClick={handleClick}
+                >
                   Майстри
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/services'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/services'}
+                  onClick={handleClick}
+                >
                   Послуги
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/contacts'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/contacts'}
+                  onClick={handleClick}
+                >
                   Контакти
                 </Link>
               </li>
@@ -92,32 +109,47 @@ const Footer: React.FC = () => {
             <h3 className={s.container_title}>Послуги</h3>
             <ul>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Волосся
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Нігті
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Обличчя
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Барбер послуги
                 </Link>
               </li>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Послуги від учнів*
                 </Link>
               </li>
@@ -137,8 +169,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <Link className={s.container_link} to={'/process'}
-                      onClick={handleClick}>
+                <Link
+                  className={s.container_link}
+                  to={'/process'}
+                  onClick={handleClick}
+                >
                   Часті запитання
                 </Link>
               </li>
@@ -175,7 +210,7 @@ const Footer: React.FC = () => {
       <div>
         <ul className={s.footer_details}>
           <li>
-            <a  href="#">Публічна оферта</a>
+            <a href="#">Публічна оферта</a>
           </li>
           <li>
             <a href="#">Угода користувача</a>

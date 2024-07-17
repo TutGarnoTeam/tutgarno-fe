@@ -6,7 +6,8 @@ import {
   ContactPage,
   HomePage,
   LoginPage,
-  NotFoundPage, ProcessPage,
+  NotFoundPage,
+  ProcessPage,
   ServicesPage,
   SpecialistsPage,
 } from '../pages';

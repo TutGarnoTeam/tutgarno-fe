@@ -116,16 +116,24 @@ const NavLaptop: React.FC = () => {
     <>
       <ul className={s.header_list_link}>
         <li>
-          <Link to={'/services'} className={s.header_nav_link}>Послуги</Link>
+          <Link to={'/services'} className={s.header_nav_link}>
+            Послуги
+          </Link>
         </li>
         <li>
-          <Link to={'/specialists'} className={s.header_nav_link}>Майстри</Link>
+          <Link to={'/specialists'} className={s.header_nav_link}>
+            Майстри
+          </Link>
         </li>
         <li>
-          <Link to={'/about'} className={s.header_nav_link}>Про нас</Link>
+          <Link to={'/about'} className={s.header_nav_link}>
+            Про нас
+          </Link>
         </li>
         <li>
-          <Link to={'/contacts'} className={s.header_nav_link}>Контакти</Link>
+          <Link to={'/contacts'} className={s.header_nav_link}>
+            Контакти
+          </Link>
         </li>
       </ul>
       <ul className={s.header_list_btn}>

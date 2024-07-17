@@ -7,6 +7,9 @@ import { Icon } from '../UI';
 import s from './Header.module.scss';
 import { Navigation } from 'swiper/modules';
 
+const tablet = 768;
+const laptop = 1280;
+
 interface ICategory {
   id: number;
   name: string;
@@ -55,22 +58,87 @@ const FixedMenu = () => {
           />
         </button>
       </div>
-      <div className={s.fixed_header_menu}></div>
     </div>
+  );
+};
+
+const NavMobile: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/login');
+  };
+
+  return (
+    <button className={s.header_nav_btn} onClick={handleClick}>
+      Вхід
+      <Icon id={'icon-user'} style={s.header_nav_btn_icon} />
+    </button>
+  );
+};
+
+const NavTablet: React.FC = () => {
+  return (
+    <ul className={s.header_list_btn}>
+      <li>
+        <button className={s.header_nav_btn}>
+          <Icon id={'icon-Master2'} style={s.header_nav_btn_icon} />
+        </button>
+      </li>
+      <li>
+        <button className={s.header_nav_btn}>
+          <Icon id={'icon-user'} style={s.header_nav_btn_icon} />
+        </button>
+      </li>
+      <li>
+        <button className={s.header_nav_btn}>
+          <Icon id={'icon-menu'} style={s.header_nav_btn_icon} />
+        </button>
+      </li>
+    </ul>
+  );
+};
+
+const NavLaptop: React.FC = () => {
+  return (
+    <>
+      <ul className={s.header_list_link}>
+        <li>
+          <Link to={'/services'} className={s.header_nav_link}>Послуги</Link>
+        </li>
+        <li>
+          <Link to={'/specialists'} className={s.header_nav_link}>Майстри</Link>
+        </li>
+        <li>
+          <Link to={'/about'} className={s.header_nav_link}>Про нас</Link>
+        </li>
+        <li>
+          <Link to={'/contacts'} className={s.header_nav_link}>Контакти</Link>
+        </li>
+      </ul>
+      <ul className={s.header_list_btn}>
+        <li>
+          <button className={s.header_nav_btn}>
+            Стати майстром
+          </button>
+        </li>
+        <li>
+          <button className={s.header_nav_btn}>
+            Профіль
+            <Icon id={'icon-user'} style={s.header_nav_btn_icon} />
+          </button>
+        </li>
+      </ul>
+    </>
   );
 };
 
 const Header: React.FC = () => {
   const [showFixedMenu, setShowFixedMenu] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const navigate = useNavigate();
-
-  const handleClickLogin = () => {
-    navigate('/login');
-  };
+  const [width, setWidth] = useState(window.innerWidth);
 
   const handleCheckWidth = () => {
-    setIsMobile(window.innerWidth < 768);
+    setWidth(window.innerWidth);
   };
 
   useEffect(() => {
@@ -91,7 +159,7 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleCheckWidth);
     };
-  }, [window.scrollY, isMobile]);
+  }, [window.scrollY, width]);
 
   return (
     <>
@@ -100,32 +168,11 @@ const Header: React.FC = () => {
           <Link to={'/'} className={s.header_logo}>
             <Icon id={'icon-Logo'} style={s.header_logo_icon} />
           </Link>
-          {isMobile ? (
-            <button
-              className={s.header_auth_btn}
-              onClick={handleClickLogin}>
-              Вхід
-              <Icon id={'icon-user'} style={s.header_auth_btn_icon} />
-            </button>
-          ) : (
-            <ul className={s.header_nav_list}>
-              <li>
-                <button className={s.header_nav_list_btn}>
-                  <Icon id={'icon-Master2'} style={s.header_nav_list_icon} />
-                </button>
-              </li>
-              <li>
-                <button className={s.header_nav_list_btn}>
-                  <Icon id={'icon-user'} style={s.header_nav_list_icon} />
-                </button>
-              </li>
-              <li>
-                <button className={s.header_nav_list_btn}>
-                  <Icon id={'icon-menu'} style={s.header_nav_list_icon} />
-                </button>
-              </li>
-            </ul>
-          )}
+          <nav className={s.header_nav}>
+            {width < tablet && <NavMobile />}
+            {width >= tablet && width < laptop && <NavTablet />}
+            {width >= laptop && <NavLaptop />}
+          </nav>
         </div>
         <Swiper
           modules={[Navigation]}
@@ -139,7 +186,7 @@ const Header: React.FC = () => {
           ))}
         </Swiper>
       </header>
-      {showFixedMenu && isMobile && <FixedMenu />}
+      {showFixedMenu && width < tablet && <FixedMenu />}
     </>
   );
 };

@@ -19,24 +19,27 @@
     }
   }
 
-  &_auth_btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    border-radius: 16px;
-    padding: 8px 6px;
-    width: 108px;
+  &_nav {
 
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 120%;
-    color: #112824;
-    background-color: #def7ec;
+    &_btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 10px 34px;
+      border-radius: 16px;
 
-    &_icon {
-      width: 12px;
-      height: 12px;
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 120%;
+      color: #112824;
+      background: #def7ec;
+
+      &_icon {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
 }
@@ -110,6 +113,7 @@
     border-radius: 24px;
     padding: 10px 20px;
 
+    color: #112824;
     background-color: #def7ec;
   }
 
@@ -117,16 +121,11 @@
     width: 20px;
     height: 20px;
   }
-
-  &_menu {
-  }
 }
 
 @media screen and (min-width: 768px) {
   .header {
     padding: 0 52px 24px;
-
-    background: linear-gradient(134deg, #0f453b 0%, #028971 52%, #9fc768 100%);
 
     &_wrap {
       padding: 16px 0;
@@ -139,18 +138,22 @@
       }
     }
 
-    &_nav_list {
+    &_nav {
+      &_btn {
+        padding: 0;
+        color: #def7ec;
+        background-color: inherit;
+
+        &_icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+
+    &_list_btn {
       display: flex;
       gap: 16px;
-
-      &_btn {
-        color: #eefbf6;
-      }
-
-      &_icon {
-        width: 30px;
-        height: 30px;
-      }
     }
   }
 
@@ -171,21 +174,51 @@
 }
 
 @media screen and (min-width: 1280px) {
+
   .header {
     padding: 24px 104px;
 
-    &_nav_list {
+    &_wrap {
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    &_nav {
       display: flex;
       gap: 16px;
 
       &_btn {
-        color: #eefbf6;
+        min-width: 144px;
+        padding: 10px 24px;
+        border-radius: 24px;
+
+        color: #112824;
+        background-color: #def7ec;
+
+        &_icon {
+          width: 16px;
+          height: 16px;
+        }
       }
 
-      &_icon {
-        width: 30px;
-        height: 30px;
+      &_link {
+        padding: 10px 20px;
+
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        color: #e5ebea;
       }
+    }
+
+    &_list_btn {
+      gap: 8px;
+    }
+
+    &_list_link {
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -204,5 +237,3 @@
     }
   }
 }
-
-

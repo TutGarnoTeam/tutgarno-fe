@@ -1,12 +1,12 @@
 import React from 'react';
 
-import PopularServices from '../components/PopularServices/PopularServices.tsx';
+import PopularServicesList from '../components/PopularServices/PopularServicesList.tsx';
 import TopMasters from '../components/TopMasters/TopMasters.tsx';
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <PopularServices />
+      <PopularServicesList />
       <TopMasters />
     </>
   );

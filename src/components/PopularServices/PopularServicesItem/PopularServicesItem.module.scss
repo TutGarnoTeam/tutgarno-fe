@@ -1,0 +1,32 @@
+.item {
+  border: 1px solid #def7ec;
+  border-radius: 16px;
+  padding: 8px;
+  width: 110px;
+  height: 158px;
+
+  box-shadow:
+    0 4px 6px 0 rgba(0, 0, 0, 0.05),
+    0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background: #eefbf6;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    height: 94px;
+    padding: 15px;
+    margin-bottom: 4px;
+    border: 1px solid #7dd8bb;
+    border-radius: 100px;
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: center;
+    color: #072721;
+  }
+}

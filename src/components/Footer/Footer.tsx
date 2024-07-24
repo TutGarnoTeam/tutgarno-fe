@@ -165,8 +165,10 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a className={s.footer_block_link}
-                     href="mailto:info@tutgarno.ua">
+                  <a
+                    className={s.footer_block_link}
+                    href="mailto:info@tutgarno.ua"
+                  >
                     info@tutgarno.ua
                   </a>
                 </li>
